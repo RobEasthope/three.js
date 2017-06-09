@@ -83,7 +83,7 @@
 					new THREE.Vector2(10,0),
 					new THREE.Vector2(50,050),
 					new THREE.Vector2(0,100) ], 12, Math.PI*2/3, Math.PI*3/2 ] },
-				{ type: 'TextGeometry', args: ['&', {
+				{ type: 'TextGeometry', args: ['R', {
 						size: 200,
 						height: 50,
 						curveSegments: 1
@@ -93,7 +93,7 @@
 			];
 
 			var loader = new THREE.FontLoader();
-			loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
+			loader.load( 'fonts/Sorts_Mill_Goudy_Regular.json', function ( font ) {
 
 				geometriesParams[ 12 ].args[ 1 ].font = font;
 
@@ -204,7 +204,7 @@
 
 						p = geometry.vertices[ vertexIndex ];
 
-						color = new THREE.Color( 0xffffff );
+						color = new THREE.Color( 0x39CCCC );
 						color.setHSL( ( p.y ) / 400 + 0.5, 1.0, 0.5 );
 
 						f.vertexColors[ j ] = color;
@@ -216,7 +216,7 @@
 				group = new THREE.Group();
 				scene.add( group );
 
-				var mesh = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: 0xfefefe, wireframe: true, opacity: 0.5 } ) );
+				var mesh = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: 0xFF4136, wireframe: true, opacity: 0.5 } ) );
 				group.add( mesh );
 
 				var fvNames = [ 'a', 'b', 'c', 'd' ];
@@ -237,7 +237,7 @@
 							centroid,
 							normalLength,
 							0x3333FF );
-					mesh.add( arrow );
+					// mesh.add( arrow );
 				}
 
 				for( var f = 0, fl = originalGeometry.faces.length; f < fl; f ++ ) {
@@ -251,7 +251,7 @@
 								originalGeometry.vertices[ face[ fvNames[ v ] ] ],
 								normalLength,
 								0xFF3333 );
-						mesh.add( arrow );
+						// mesh.add( arrow );
 					}
 				}
 
@@ -266,7 +266,7 @@
 								mesh.geometry.vertices[ face[ fvNames[ v ] ] ],
 								normalLength,
 								0x000000 );
-						mesh.add( arrow );
+						// mesh.add( arrow );
 					}
 				}
 
